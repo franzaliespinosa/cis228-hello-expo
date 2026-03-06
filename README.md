@@ -1,50 +1,32 @@
-# Welcome to your Expo app 👋
+# Franz' App of Nonsense
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A fun and interactive mobile app built with **React** and **Expo**. This app lets users enter their name and receive a personalized greeting using a card-style UI.
 
-## Get started
+---
 
-1. Install dependencies
+## Installation & Running the App
 
-   ```bash
-   npm install
-   ```
+To run the app locally, follow these steps:
 
-2. Start the app
+1. **Clone the Repository**
+bash
+- git clone https://github.com/franzaliespinosa/cis228-hello-expo.git <br>
 
-   ```bash
-   npx expo start
-   ```
+   And enter this command on the command prompt:
+- cd cis228-hello-expo
 
-In the output, you'll find options to open the app in a
+2. **Install Project Dependencies**
+Make sure you have Node.js installed. Then run:
+- npm install <br>
+   This will install all required packages listed in package.json.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+3. **Start the Expo Development Server**
+Input this command on the command prompt:
+- npx expo start <br>
+   This opens the Expo Dev Tools in your browser.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+You can then: <br>
+<br> - Scan the QR code with the Expo Go app on your iOS or Android device to run the app on your phone.
+<br> - Or press i to run on an iOS simulator, or a to run on an Android emulator if you have one set up.
+<br> - Make changes and see live updates
+<br> - Any code changes will automatically refresh in the app thanks to hot reloading.
