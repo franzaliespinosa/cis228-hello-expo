@@ -2,14 +2,12 @@ import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
 import React, { useState } from 'react';
-import { Alert, Button, Image, Platform, StyleSheet, TextInput } from 'react-native';
+import { Alert, Button, Image, StyleSheet, TextInput } from 'react-native';
 
 
 export default function HomeScreen() {
   const [name, setName] = useState('');
-  const sayHello = () => Alert.alert("Greeting", `Hello ${name}!`)
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -20,11 +18,15 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome to Franz'app!</ThemedText>
+        <ThemedText type="title">Welcome to Franz' app of nonsense!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Say Hello</ThemedText>
+          <Image
+            source={require('@/assets/images/mambo.png')}
+            style={styles.mambo}
+          />
+        <ThemedText type="subtitle" >What is your name?</ThemedText>
         <TextInput
           style={styles.input}
           placeholder="Enter your name"
@@ -33,61 +35,8 @@ export default function HomeScreen() {
         />
         <Button
           title="Say Hello"
-          onPress={() => Alert.alert("Greeting", `Hello ${name}!`)}
+          onPress={() => Alert.alert("Hello there!", `Hello ${name}!`)}
         />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
-
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -105,7 +54,7 @@ const styles = StyleSheet.create({
     gap: 12, 
     marginBottom: 12,
     padding: 12,
-    backgroundColor: '#fff', 
+    backgroundColor: '#ffffff', 
     borderRadius: 8,
     shadowColor: '#000',      
     shadowOffset: { width: 0, height: 2 },
@@ -114,19 +63,25 @@ const styles = StyleSheet.create({
     elevation: 2,          
   },
   golshiLogo: {
-    height: 178,
-    width: 290,
+    height: '100%',
+    width: '100%',
     bottom: 0,
     left: 0,
     position: 'absolute',
   },
+  mambo: {
+    width: 200,
+    height: 200,
+    alignSelf: 'center',
+    marginBottom: 10,
+  },
   input: {
-    width: '80%',
+    width: '100%',
     borderWidth: 1,
     borderColor: '#ccc',
     padding: 10,
     borderRadius: 8,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     alignSelf: 'center',
     marginBottom: 10,
   },
